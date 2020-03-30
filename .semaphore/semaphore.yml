@@ -5,15 +5,6 @@ agent:
     type: e1-standard-2
     os_image: ubuntu1804
 blocks:
-  - name: Install dependencies
-    task:
-      jobs:
-        - name: npm install and cache
-          commands:
-            - checkout
-            - cache restore
-            - npm i
-            - cache store
   - name: Appium tests
     task:
       prologue:

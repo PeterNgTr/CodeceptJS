@@ -5,25 +5,18 @@ agent:
     type: e1-standard-2
     os_image: ubuntu1804
 blocks:
-  - name: Checkout code
+  - name: Set things up
     task:
       jobs:
-        - name: checkout git
+        - name: Compile
           commands:
             - checkout
-    dependencies: []
-  - name: Install dependencies
-    dependencies:
-      - Checkout code
-    task:
-      jobs:
-        - name: Install dependencies
-          commands:
             - npm i
-  - name: Run Appium tests
-    dependencies:
-      - Install dependencies
+  - name: Appium tests
     task:
+      prologue:
+        commands:
+          - checkout
       jobs:
         - name: Quick tests
           commands:

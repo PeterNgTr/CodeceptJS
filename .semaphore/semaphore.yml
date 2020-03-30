@@ -23,7 +23,7 @@ blocks:
       jobs:
         - name: Quick tests
           commands:
-            - npx mocha test/helper/Appium_test.js --grep "quick"
+            - ./node_modules/.bin/mocha test/helper/Appium_test.js --grep "quick"
         - name: Other Tests
           commands:
-            - npx mocha test/helper/Appium_test.js --grep "second"
+            - ./node_modules/.bin/mocha test/helper/Appium_test.js --grep "second"

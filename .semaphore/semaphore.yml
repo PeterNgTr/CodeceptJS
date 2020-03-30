@@ -19,6 +19,7 @@ blocks:
       prologue:
         commands:
           - checkout
+          - npm i
           - cache restore
       jobs:
         - name: Quick tests

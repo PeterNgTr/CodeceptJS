@@ -7,6 +7,8 @@ agent:
 blocks:
   - name: Appium tests
     task:
+      secrets:
+        - name: saucelabs
       prologue:
         commands:
           - checkout
